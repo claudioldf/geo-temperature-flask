@@ -1,0 +1,14 @@
+flask
+flask-cors
+flask-sqlalchemy
+flask-migrate
+pymysql
+cerberus
+pytest 
+coverage 
+pytest-cov
+requests_mock
+python-dotenv
+googlemaps
+geocoder
+jsons

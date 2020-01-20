@@ -1,0 +1,24 @@
+version: '2'
+services:
+  app_backend_flask:
+    build: .
+    container_name: app_backend_flask
+    ports:
+      - "5000:5000"
+    expose:
+      - "5000"
+    volumes:
+      - .:/app
+    links:
+      - db_backend_flask
+
+  db_backend_flask:
+    image: mysql:5.6
+    container_name: db_backend_flask
+    ports:
+      - "3310:3306"
+    volumes:
+      - ./data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=myrootpassword
+      - MYSQL_DATABASE=loadsmart_backend_flask
